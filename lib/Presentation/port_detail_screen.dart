@@ -47,21 +47,27 @@ class _PortDetailScreenState extends State<PortDetailScreen> {
                 color: isOn ? Colors.amber : Colors.grey,
               ),
             ),
-             const Divider(),
-            SwitchListTile(
-              title: const Text("Voice Mode"),
-              value: voiceCommand,
-              activeColor: Colors.blue,
-              onChanged: (val) => setState(() => voiceCommand = val),
-              secondary: const Icon(Icons.mic, color: Colors.deepPurple),
+            //const Divider(),
+            Visibility(
+              visible: false,
+              child: SwitchListTile(
+                title: const Text("Voice Mode"),
+                value: voiceCommand,
+                activeColor: Colors.blue,
+                onChanged: (val) => setState(() => voiceCommand = val),
+                secondary: const Icon(Icons.mic, color: Colors.deepPurple),
+              ),
             ),
             const Divider(),
-            SwitchListTile(
-              title: const Text("Dimming Effect"),
-              value: dimming,
-              activeColor: Colors.blue,
-              onChanged: (val) => setState(() => dimming = val),
-              secondary: const Icon(Icons.brightness_6, color: Colors.orange),
+            Visibility(
+              visible: false,
+              child: SwitchListTile(
+                title: const Text("Dimming Effect"),
+                value: dimming,
+                activeColor: Colors.blue,
+                onChanged: (val) => setState(() => dimming = val),
+                secondary: const Icon(Icons.brightness_6, color: Colors.orange),
+              ),
             ),
             const Divider(),
             ListTile(
